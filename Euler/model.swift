@@ -14,7 +14,6 @@ class model {
     var multiples = [Int]()
     let three = 3
     let five = 5
-    let total = 4000000 // 4,000,000,00 (4 million)
     var fib = [Int]()
     
     init() {
@@ -50,10 +49,6 @@ class model {
                 fib.append(num)
             }
         }
-        
-        
-        // 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
-        // my answer : [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
         
         return fib
     }
