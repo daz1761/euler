@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     private var myModel = model()
     private var fib_array = [Int]()
     private var euler_ans = [Int]()
-    private let euler_titles = ["Multiples", "Fibonacci"]
+    private let euler_titles = ["Multiples", "Fibonacci", "Prime"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,11 @@ class TableViewController: UITableViewController {
         }
         let fib_sum = fib_array.reduce(0, +)  // sum array
         euler_ans.append(fib_sum)
+        
+        // prime
+        if let prime_ans = myModel.prime(num: 600851475143) {
+            euler_ans.append(Int(prime_ans))
+        }
         
     }
     

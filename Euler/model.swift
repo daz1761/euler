@@ -53,4 +53,23 @@ class model {
         return fib
     }
     
+    func prime(num : UInt64) -> UInt64? {
+        
+        var ans : UInt64?
+        var A = num
+        var B : UInt64 = 2
+        
+        while A != B {
+            if(A % B == 0) {
+                A = A/B
+                B = 2
+            } else {
+                B = B + 1
+            }
+        }
+        
+        ans = A
+        return ans
+    }
+    
 }
