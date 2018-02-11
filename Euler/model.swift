@@ -72,4 +72,28 @@ class model {
         return ans
     }
     
+    func palindrome() {
+        
+    }
+    
+    private func reverse(_ x: Int) -> Int {
+        guard x >= Int(Int32.min), x <= Int(Int32.max) else {
+            return 0
+        }
+        if x > -10 && x < 10 {
+            return x
+        }
+        var number = abs(x)
+        var reverseNumber = 0
+        while number > 0 {
+            let reminder = number % 10
+            reverseNumber = reverseNumber * 10 + reminder
+            if reverseNumber > Int(Int32.max) {
+                return 0
+            }
+            number = number / 10
+        }
+        return x < 0 ? -reverseNumber : reverseNumber
+    }
+    
 }
