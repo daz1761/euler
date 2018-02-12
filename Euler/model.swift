@@ -72,7 +72,27 @@ class model {
         return ans
     }
     
-    func palindrome() {
+    func palindrome() -> Array<Int> {
+        
+        var A = [Int]()
+        A += 1...999
+        var B = 800 // more efficient than starting at 1
+        var ans = [Int]()
+        
+        while(B <= 999) {
+            
+            for a in A {
+                
+                if((a*B) == reverse(a*B)) {
+                    ans.append(a*B)
+                }
+            }
+            
+            B = B + 1
+            
+        }
+        
+        return ans // 906609, 9009
         
     }
     
