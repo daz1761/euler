@@ -116,4 +116,40 @@ class model {
         return x < 0 ? -reverseNumber : reverseNumber
     }
     
+    func smallestMultiple() -> Int? {
+        
+        
+        var num = 2520 // start from the smallest multiple from 1 ... 10
+        var counter = 0
+        var index = 0
+        var ans : Int?
+        
+        let divisors = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]  // could not be bothered using the range operator
+        
+        while(true) {
+            
+            if(num % divisors[index] == 0) {
+                counter = counter + 1
+                index = index + 1
+            } else {
+                counter = 0
+                index = 0
+                num = num + 1
+            }
+            
+            if(counter == divisors.count) {
+                ans = num
+                break
+            }
+            
+        }
+        
+        return ans
+        
+    /* 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+     
+     What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20? */
+    }
+    
+    
 }

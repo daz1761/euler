@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     private var myModel = model()
     private var fib_array = [Int]()
     private var euler_ans = [Int]()
-    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome"]
+    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Smallest Multiple"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +44,11 @@ class TableViewController: UITableViewController {
         let palin_ans = myModel.palindrome()
         if let max = palin_ans.max() {
             euler_ans.append(max)
+        }
+        
+        // smallest multiple
+        if let sm_ans = myModel.smallestMultiple() {
+            euler_ans.append(sm_ans)
         }
         
     }
