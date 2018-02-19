@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     private var myModel = model()
     private var fib_array = [Int]()
     private var euler_ans = [Int]()
-    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Smallest Multiple"]
+    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Smallest Multiple", "Sum Square Difference"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,12 @@ class TableViewController: UITableViewController {
         if let sm_ans = myModel.smallestMultiple() {
             euler_ans.append(sm_ans)
         }
+        
+        // sum of square difference
+        if let ss_ans = myModel.sumSquareDifference() {
+            euler_ans.append(ss_ans)
+        }
+        
         
     }
     

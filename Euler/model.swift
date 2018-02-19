@@ -145,10 +145,30 @@ class model {
         }
         
         return ans
+    }
+    
+    func sumSquareDifference() -> Int? {
         
-    /* 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
-     
-     What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20? */
+        let power = 2
+        var numbers = [Int]()
+        numbers += 1...100
+        var ans01 = [Int]()
+        var ans02 = [Int]()
+        var diff : Int?
+        
+        for num in numbers {
+            ans01.append(Int(pow(Double(num), Double(power)))) // sqr each element
+        }
+        let sumSqr = ans01.reduce(0, +) // sum squared numbers
+        
+        for num in numbers {
+            ans02.append(num)
+        }
+        let sqrSum = Int(pow(Double(ans02.reduce(0, +)), Double(power)))
+        
+        diff = sqrSum - sumSqr
+        
+        return diff
     }
     
     
