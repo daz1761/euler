@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     private var myModel = model()
     private var fib_array = [Int]()
     private var euler_ans = [Int]()
-    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Smallest Multiple", "Sum Square Difference"]
+    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Smallest Multiple", "Sum of Square Difference", "10001st prime number"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,11 @@ class TableViewController: UITableViewController {
         
         // fibonacci
         let fib_ans = myModel.fibonacciSequence()
-        
+
         for fib in fib_ans {
             if fib % 2 == 0 {
                 self.fib_array.append(fib)
-                
+
             }
         }
         let fib_sum = fib_array.reduce(0, +)  // sum array
@@ -39,7 +39,7 @@ class TableViewController: UITableViewController {
         if let prime_ans = myModel.prime(num: 600851475143) {
             euler_ans.append(Int(prime_ans))
         }
-        
+
         // palindromic numbers
         let palin_ans = myModel.palindrome()
         if let max = palin_ans.max() {
@@ -56,6 +56,9 @@ class TableViewController: UITableViewController {
             euler_ans.append(ss_ans)
         }
         
+        // 10 001st prime number
+        let p_ans = myModel.primeNumbers()
+        euler_ans.append(p_ans)
         
     }
     

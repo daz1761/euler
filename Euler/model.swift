@@ -153,23 +153,49 @@ class model {
         var numbers = [Int]()
         numbers += 1...100
         var ans01 = [Int]()
-        var ans02 = [Int]()
         var diff : Int?
         
         for num in numbers {
             ans01.append(Int(pow(Double(num), Double(power)))) // sqr each element
         }
-        let sumSqr = ans01.reduce(0, +) // sum squared numbers
-        
-        for num in numbers {
-            ans02.append(num)
-        }
-        let sqrSum = Int(pow(Double(ans02.reduce(0, +)), Double(power)))
+        let sumSqr = ans01.reduce(0, +) // sum squared of numbers
+        let sqrSum = Int(pow(Double(numbers.reduce(0, +)), Double(power))) // squared sum of numbers
         
         diff = sqrSum - sumSqr
         
         return diff
     }
     
+    func primeNumbers() -> Int {
+        
+        // Sieve of Eratosthenes - could not do this way!
+        
+        var numOfPrimes = 0
+        var num = 2
+        let limit = 10001
+        
+        //let b = isPrime(num: 10)
+        //print(b) false!
+        
+        while(numOfPrimes != limit) {
+            if(isPrime(num: num)) {
+                numOfPrimes = numOfPrimes + 1
+                print("\(num) is prime")
+            }
+            num = num + 1
+        }
+        
+        return num - 1 // 104743  ....  if we dont add "-1" we get 104744, which is PRIME!!!!!
+    }
+    
+    private func isPrime(num : Int) -> Bool {
+        
+        for i in 2..<num {
+            if(num % i == 0) {
+                return false
+            }
+        }
+        return true
+    }
     
 }
