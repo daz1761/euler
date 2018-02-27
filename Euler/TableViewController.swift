@@ -13,7 +13,8 @@ class TableViewController: UITableViewController {
     private var myModel = model()
     private var fib_array = [Int]()
     private var euler_ans = [Int]()
-    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Smallest Multiple", "Sum of Square Difference", "10001st prime number"]
+    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Largest Product in a Series"]
+    // "Smallest Multiple" "Sum of Square Difference" "10001st prime number"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,23 +43,29 @@ class TableViewController: UITableViewController {
 
         // palindromic numbers
         let palin_ans = myModel.palindrome()
-        if let max = palin_ans.max() {
-            euler_ans.append(max)
+        if let palin_max = palin_ans.max() {
+            euler_ans.append(palin_max)
         }
         
         // smallest multiple
-        if let sm_ans = myModel.smallestMultiple() {
-            euler_ans.append(sm_ans)
-        }
+//        if let sm_ans = myModel.smallestMultiple() {
+//            euler_ans.append(sm_ans)
+//        }
         
         // sum of square difference
-        if let ss_ans = myModel.sumSquareDifference() {
-            euler_ans.append(ss_ans)
-        }
+//        if let ss_ans = myModel.sumSquareDifference() {
+//            euler_ans.append(ss_ans)
+//        }
         
         // 10 001st prime number
-        let p_ans = myModel.primeNumbers()
-        euler_ans.append(p_ans)
+//        let p_ans = myModel.primeNumbers()
+//        euler_ans.append(p_ans)
+        
+        // largest product in a series
+        let lp_ans = myModel.LargestProduct()
+        if let lp_max = lp_ans.max() {
+            euler_ans.append(lp_max)
+        }
         
     }
     
