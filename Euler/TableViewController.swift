@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     private var myModel = model()
     private var fib_array = [Int]()
     private var euler_ans = [Int]()
-    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Largest Product in a Series"]
+    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Largest Product in a Series", "Special Pythagorean Triplet"]
     // "Smallest Multiple" "Sum of Square Difference" "10001st prime number"
     
     override func viewDidLoad() {
@@ -67,6 +67,9 @@ class TableViewController: UITableViewController {
             euler_ans.append(lp_max)
         }
         
+        // special pythagorean triplet
+        let py_ans = myModel.pythagoreanTriplet()
+        euler_ans.append(py_ans)
     }
     
     override func didReceiveMemoryWarning() {
