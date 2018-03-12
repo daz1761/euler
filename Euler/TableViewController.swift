@@ -13,8 +13,8 @@ class TableViewController: UITableViewController {
     private var myModel = model()
     private var fib_array = [Int]()
     private var euler_ans = [Int]()
-    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Largest Product in a Series", "Special Pythagorean Triplet"]
-    // "Smallest Multiple" "Sum of Square Difference" "10001st prime number"
+    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Smallest Multiple", "Sum of Square Difference", "10001st prime number", "Largest Product in a Series", "Special Pythagorean Triplet", "Sum of Primes Below 2,000,000"]
+    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,15 +51,19 @@ class TableViewController: UITableViewController {
 //        if let sm_ans = myModel.smallestMultiple() {
 //            euler_ans.append(sm_ans)
 //        }
+        let sm_ans = 232792560
+        euler_ans.append(sm_ans)
         
         // sum of square difference
-//        if let ss_ans = myModel.sumSquareDifference() {
-//            euler_ans.append(ss_ans)
-//        }
+        if let ss_ans = myModel.sumSquareDifference() {
+            euler_ans.append(ss_ans)
+        }
         
         // 10 001st prime number
 //        let p_ans = myModel.primeNumbers()
 //        euler_ans.append(p_ans)
+        let p_ans = 104743
+        euler_ans.append(p_ans)
         
         // largest product in a series
         let lp_ans = myModel.LargestProduct()
@@ -70,6 +74,13 @@ class TableViewController: UITableViewController {
         // special pythagorean triplet
         let py_ans = myModel.pythagoreanTriplet()
         euler_ans.append(py_ans)
+        
+        // the sum of primes below 2000000
+//        if let sp_ans = myModel.sumOfPrimes() {
+//            print(sp_ans)
+//        }
+        let sp_ans = 142913828922
+        euler_ans.append(sp_ans)
     }
     
     override func didReceiveMemoryWarning() {

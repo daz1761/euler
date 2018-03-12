@@ -167,16 +167,16 @@ class model {
     }
     
     func primeNumbers() -> Int {
-        
+
         // Sieve of Eratosthenes - could not do it this way!
-        
+
         var numOfPrimes = 0
         var num = 2
-        let limit = 10001
-        
+        let limit = 10001 // this is like a count var
+
         //let b = isPrime(num: 10)
         //print(b) false!
-        
+
         while(numOfPrimes != limit) {
             if(isPrime(num: num)) {
                 numOfPrimes = numOfPrimes + 1
@@ -184,7 +184,7 @@ class model {
             }
             num = num + 1
         }
-        
+
         return num - 1 // 104743  ....  if we dont add "-1" we get 104744, which is PRIME!!!!!
     }
     
@@ -216,6 +216,54 @@ class model {
             }
         }
         return answer
+    }
+    
+    func sumOfPrimes() -> Int? {
+        // Sieve of Eratosthenes (Algorithm for prime numbers)
+        
+        let limit = 1999999  // 1,999,999 (below 2,000,000) ...... i = 1414 (sqrt of 1999999)
+        
+        var numbers = [Int]()
+        numbers += 2...limit
+        
+        var primes = [Int]()
+       
+        var num = 2  // remember, always start at 2!
+        var ans: Int?
+        var idx = 0
+        
+        for i in 2...1414 {
+            print(i)
+            num = numbers[idx]
+            
+            if(isPrime(num: num)) {
+                
+                primes = removeMultiplesOf(num: num, from: numbers)
+                numbers = primes
+            }
+            
+            idx = idx + 1
+            
+        }
+        
+        ans = numbers.reduce(0, +)
+        return ans
+        
+    }
+    
+    private func removeMultiplesOf(num : Int, from array : [Int]) -> [Int]{
+        
+        return array.filter({ currentNum->Bool in
+            //Only discard the number if it's a multiple of num, but it is not num
+            if(currentNum % num == 0 && currentNum != num) {
+                return false
+            } else {
+                return true
+            }
+        })
+        // num = 2
+        // testArray = [2,4,6,7,8,10,12]
+        // return = [2,7]
     }
     
     private func hypotenuse(_ a: Double, _ b: Double) -> Double {
