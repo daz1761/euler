@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     private var myModel = model()
     private var fib_array = [Int]()
     private var euler_ans = [Int]()
-    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Smallest Multiple", "Sum of Square Difference", "10001st prime number", "Largest Product in a Series", "Special Pythagorean Triplet", "Sum of Primes Below 2,000,000"]
+    private let euler_titles = ["Multiples", "Fibonacci", "Prime", "Palindrome", "Smallest Multiple", "Sum of Square Difference", "10001st prime number", "Largest Product in a Series", "Special Pythagorean Triplet", "Sum of Primes Below 2,000,000", "Largest Diagonal Product"]
     //
     
     override func viewDidLoad() {
@@ -81,6 +81,11 @@ class TableViewController: UITableViewController {
 //        }
         let sp_ans = 142913828922
         euler_ans.append(sp_ans)
+        
+        // largest diagonal product
+        if let ldp_ans = myModel.largestDiagProduct() {
+            euler_ans.append(ldp_ans)
+        }
     }
     
     override func didReceiveMemoryWarning() {
